@@ -1,14 +1,23 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import formVue from './components/formVue.vue'
+import HelloWorld from './components/HelloWorld.vue';
+import vModel from './views/v-model.vue';
+import VShow from './views/v-show.vue';
+import VFor from './views/v-for.vue';
 </script>
 
 
 <template>
-  <HelloWorld msg="我来了" />
-  <formVue msg="表单" />
-</template>
 
+  <HelloWorld msg="HelloWorld" />
+  <!--v-model与插值绑定-->
+  <h4>1. v-model与插值绑定</h4>
+  <vModel />
+  <h4>2. v-show</h4>
+  <VShow  />
+  <h4>3. v-for</h4>
+  <VFor  />
+
+</template>
 
 
 
@@ -41,7 +50,8 @@ import formVue from './components/formVue.vue'
   </div>
   <HelloWorld msg="Vite + Vue 445566" />
 </template>
-
+-->
+<!--
 <style scoped>
 .logo {
   height: 6em;
