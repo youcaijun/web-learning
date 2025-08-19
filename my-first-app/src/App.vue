@@ -1,8 +1,36 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
+import formVue from './components/formVue.vue'
 </script>
 
+
 <template>
+  <HelloWorld msg="我来了" />
+  <formVue msg="表单" />
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <template>
   <div>
     <a href="https://vite.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
@@ -11,7 +39,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <HelloWorld msg="Vite + Vue 445566" />
 </template>
 
 <style scoped>
@@ -27,4 +55,4 @@ import HelloWorld from './components/HelloWorld.vue'
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }
-</style>
+</style> -->
