@@ -1,25 +1,16 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue';
-import vModel from './views/v-model.vue';
-import VShow from './views/v-show.vue';
-import VFor from './views/v-for.vue';
+   
 </script>
 
 
-<template>
-
-  <HelloWorld msg="HelloWorld" />
-  <!--v-model与插值绑定-->
-  <h4>1. v-model与插值绑定</h4>
-  <vModel />
-  <h4>2. v-show</h4>
-  <VShow  />
-  <h4>3. v-for</h4>
-  <VFor  />
-
+<template >
+  <!--使用router才能访问-->
+  <router-view></router-view>
 </template>
 
-
+<style scoped>
+  
+</style>
 
 
 
