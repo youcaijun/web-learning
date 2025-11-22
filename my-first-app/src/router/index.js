@@ -1,20 +1,43 @@
 import { createRouter, createWebHashHistory, createWebHistory } from "vue-router"
 
 const routes = [
-	{
-		path: "/button", // http://localhost:8080/
-		name: "Button",
-		component: () => import("@/views/el-button.vue")
-	},
-	{
-		path: "/content", // http://localhost:8080/content
-		name: "Content",
-		component: () => import("@/views/content.vue")
-	},
+	// {
+	// 	path: "/button", // http://localhost:8080/
+	// 	name: "Button",
+	// 	component: () => import("@/views/el-button.vue")
+	// },
+	// {
+	// 	path: "/content", // http://localhost:8080/content
+	// 	name: "Content",
+	// 	component: () => import("@/views/content.vue")
+	// },
 	{
 		path: "/", // http://localhost:8080/content
 		name: "Index",
-		component: () => import("@/views/index.vue")
+		component: () => import("@/views/index.vue"),
+		children: [ // 子路由
+			{
+				path: '/main',
+				component: () => import("@/views/main.vue")
+			},
+			{
+				path: '/content',
+				component: () => import("@/views/content.vue")
+			},
+			{
+				path: "/label",
+				component: () => import("@/views/label.vue")
+			},
+			{
+				path: "/labelReport",
+				component: () => import("@/views/labelReport.vue")
+			},
+			{
+				path: "/button",
+				component: () => import("@/views/el-button.vue")
+			}
+
+		]
 	}
 ]
 

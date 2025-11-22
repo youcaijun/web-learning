@@ -1,8 +1,6 @@
 <script setup>
 import { ElContainer, ElHeader, ElAside, ElMain, ElFooter } from 'element-plus';
 import Vmenu from '@/components/menu.vue';
-
-const views="main";
 </script>
 
 <template>
@@ -14,7 +12,10 @@ const views="main";
             <!-- menu组件树 -->
             <Vmenu></Vmenu>
           </el-aside>
-          <el-main>{{ views }}</el-main>
+          <el-main>
+            <!--使用router才能访问-->
+            <router-view></router-view>
+          </el-main>
         </el-container>
         <el-footer>Footer</el-footer>
     </el-container>

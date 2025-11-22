@@ -7,6 +7,9 @@ import 'element-plus/dist/index.css'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import 'element-plus/theme-chalk/dark/css-vars.css'
 import router from './router'
+//导入echarts
+import * as echarts from 'echarts';
+
 
 /**大小写不一样也会报错 */
 const app = createApp(App);
@@ -14,6 +17,9 @@ const app = createApp(App);
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component)
 }
+
+app.config.globalProperties.$echarts = echarts;
+
 /**引用elementPlus,并使用暗黑模式 */
 app.use(ElementPlus, {
   el: {
