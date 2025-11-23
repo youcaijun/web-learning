@@ -18,6 +18,7 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component)
 }
 
+//将 echarts 挂载到全局属性中
 app.config.globalProperties.$echarts = echarts;
 
 /**引用elementPlus,并使用暗黑模式 */
