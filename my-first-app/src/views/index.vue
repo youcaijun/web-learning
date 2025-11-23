@@ -26,4 +26,5 @@ import Vmenu from '@/components/menu.vue';
 .aside {
   width: 15%;
 }
+
 </style>

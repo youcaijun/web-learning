@@ -6,7 +6,6 @@ import { ElMenu, ElMenuItem } from 'element-plus';
 <template>
     菜单
     <el-menu :router="true">
-
         <el-menu-item index="/main">主要预览</el-menu-item>
         <el-sub-menu index="1">
             <template #title><span>基本配置</span></template>

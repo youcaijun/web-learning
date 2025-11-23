@@ -1,14 +1,16 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
+import { createApp } from 'vue';
+import './style.css';
+import App from './App.vue';
+import ElementPlus from 'element-plus';
+import 'element-plus/dist/index.css';
 //导入 ElementPlus 组件库中的所有图标
-import * as ElementPlusIconsVue from '@element-plus/icons-vue'
-import 'element-plus/theme-chalk/dark/css-vars.css'
-import router from './router'
+import * as ElementPlusIconsVue from '@element-plus/icons-vue';
+import 'element-plus/theme-chalk/dark/css-vars.css';
+import router from './router';
 //导入echarts
 import * as echarts from 'echarts';
+//导入pinia
+import { createPinia } from 'pinia';
 
 
 /**大小写不一样也会报错 */
@@ -21,14 +23,13 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 //将 echarts 挂载到全局属性中
 app.config.globalProperties.$echarts = echarts;
 
-/**引用elementPlus,并使用暗黑模式 */
-app.use(ElementPlus, {
-  el: {
-    elMessage: {
-      color: '#fff' // 设置消息框文字颜色为白色，适应暗黑模式
-    }
-  }
-});
+const pinia = createPinia();
+
+
+/**引用elementPlus */
+app.use(ElementPlus);
 /**引用路由机制 */
 app.use(router);
+/**引用pinia状态管理 */
+app.use(pinia);
 app.mount('#app');

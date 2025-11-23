@@ -5,7 +5,7 @@
 
 <template >
   <!--使用router才能访问-->
-  <router-view></router-view>
+  <router-view/>
 </template>
 
 <style scoped>
