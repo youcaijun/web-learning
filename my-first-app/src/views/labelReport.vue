@@ -50,7 +50,7 @@ const onQuery = (name) => {
 
 <template>
 
-	<el-text class="mx-1" size="large">标的报表</el-text>
+	<el-text class="mx-1" size="large">基础表单</el-text>
 
 	<el-form :inline="true" :model="form" label-width="auto" >
 		<el-form-item label="名称:">

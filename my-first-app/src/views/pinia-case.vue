@@ -8,10 +8,10 @@ const list = listStore();
 </script>
 
 <template>
-	Pinia案例 <br>
+	Pinia案例,在主要预览可以看到变化的值 <br>
 {{list.str}}
 
- <el-button type="primary" @click="list.updateStr('在主页可以看到');">更新</el-button>
+ <el-button type="primary" @click="list.updateStr('发生变化了');">更新</el-button>
 </template>
 
 <style scoped></style>

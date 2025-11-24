@@ -41,8 +41,6 @@ const routes = [
 				path: "/labelReport",
 				component: () => import("@/views/labelReport.vue")
 			},
-
-
 		]
 	}
 ]

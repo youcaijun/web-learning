@@ -1,16 +1,39 @@
 <script setup>
 import { ElContainer, ElHeader, ElAside, ElMain, ElFooter } from 'element-plus';
 import Vmenu from '@/layout/components/menu.vue';
+
+const handleCommand = (command) => {
+  console.log(command);
+  //通过不同的command执行不同的操作
+  if (command === 'logout') {
+    alert('退出登录');
+  }
+  if  (command === 'info') {
+    alert('用户信息');
+  }
+}
 </script>
 
 <template>
   <div class="common-layout">
     <el-container class="wrapper">
-      <el-header>Header
-
+      <el-header>
+        <div>图片</div>
+        <!-- 通过指令去执行对应的事件-->
+        <el-dropdown  @command="handleCommand">
+          <!-- 改一下字体颜色 -->
+          <div style="color: #fff;">头像</div>
+          <template #dropdown>
+            <el-dropdown-menu >
+              <el-dropdown-item command="info">用户信息</el-dropdown-item>
+              <el-dropdown-item disabled>不可选中</el-dropdown-item>
+              <el-dropdown-item divided command="logout">退出登录</el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
       </el-header>
       <el-container>
-        <el-aside class="aside">
+        <el-aside>
           <!-- 菜单 -->
           <Vmenu></Vmenu>
         </el-aside>
@@ -20,25 +43,37 @@ import Vmenu from '@/layout/components/menu.vue';
         </el-main>
       </el-container>
     </el-container>
-    <el-footer class="footer">Footer</el-footer>
+    <el-footer>Footer</el-footer>
   </div>
-  
 </template>
 
 <style scoped>
+/* 样式部分 */
+/* 确保header内容左右分布 */
+.el-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #373d41;
+  color: #fff;
+}
+
 /* 确保footer在底部 */
 .common-layout {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* 确保容器至少占据整个视口的高度 */
+  min-height: 100vh;
+  /* 确保容器至少占据整个视口的高度 */
 }
 
-.aside {
+.el-aside {
   width: 10%;
-  background: #dc6262;
+  text-align: center;
+  border: 1px solid #1f2942;
 }
 
-.footer {
+.el-footer {
+  height: 50px;
   background: #333;
   color: white;
   padding: 20px;

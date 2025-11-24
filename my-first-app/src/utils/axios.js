@@ -6,6 +6,13 @@ const apiClient = axios.create({
     timeout: 10000, // 请求超时时间
 });
 
+// 创建 axios 实例
+//https://www.stockapi.com.cn/v1/base/day?code=000858&startDate=2025-11-20&endDate=2025-11-21
+const webClient = axios.create({
+    baseURL: 'https://www.stockapi.com.cn/v1/base/day', // 你的 API 基础 URL
+    timeout: 10000, // 请求超时时间
+});
+
 // 添加请求拦截器
 // apiClient.interceptors.request.use(
 //     config => {

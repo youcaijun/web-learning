@@ -12,4 +12,6 @@ export  const listStore = defineStore ( 'listStore',{
             this.str = newStr;
         }
     },
+    // 数据持久化,true表示全部持久化，false表示不持久化，清理浏览器数据后失效
+    persist: false,
 });
