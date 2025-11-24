@@ -1,6 +1,9 @@
+
+
+<!-- 旧版布局组件，已废弃，请使用src/layout/layout.vue -->
 <script setup>
-import { ElContainer, ElHeader, ElAside, ElMain, ElFooter } from 'element-plus';
-import Vmenu from '@/components/menu.vue';
+// import { ElContainer, ElHeader, ElAside, ElMain, ElFooter } from 'element-plus';
+// import Vmenu from '@/layout/components/menu.vue';
 </script>
 
 <template>

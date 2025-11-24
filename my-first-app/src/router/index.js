@@ -13,29 +13,35 @@ const routes = [
 	// },
 	{
 		path: "/", // http://localhost:8080/content
-		name: "Index",
-		component: () => import("@/views/index.vue"),
+		name: "layout",
+		//	component: () => import("@/old/index.vue"),
+		component: () => import("@/layout/layout.vue"),
 		children: [ // 子路由
 			{
 				path: '/main',
 				component: () => import("@/views/main.vue")
 			},
 			{
+				path: '/PiniaCase',
+				component: () => import("@/views/pinia-case.vue")
+			},
+			{
+				path: "/buttonCase",
+				component: () => import("@/views/el-button-case.vue")
+			},
+			{
 				path: '/content',
 				component: () => import("@/views/content.vue")
 			},
 			{
-				path: "/label",
-				component: () => import("@/views/label.vue")
+				path: "/labelCase",
+				component: () => import("@/views/label-case.vue")
 			},
 			{
 				path: "/labelReport",
 				component: () => import("@/views/labelReport.vue")
 			},
-			{
-				path: "/button",
-				component: () => import("@/views/el-button.vue")
-			}
+
 
 		]
 	}
