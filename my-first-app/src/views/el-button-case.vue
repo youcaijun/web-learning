@@ -6,6 +6,15 @@ const data= {
         key:"mess",
         value:"hello api"
 }
+
+import { useRouter } from 'vue-router'
+
+const router = useRouter();
+
+const goPath = (path) => {
+	router.push(path);
+}
+
 </script>
 
 <template>
@@ -17,6 +26,7 @@ const data= {
         <el-button type="info" @click="redisUtils.get('name')">信息按钮</el-button>
         <el-button type="warning"@click="redisUtils.set(data)">警告按钮</el-button>
         <el-button type="danger"@click="redisUtils.get('mess')">危险按钮</el-button>
+        <el-button type="primary" @click="goPath('/main')">回到首页</el-button>
         <hr>
         <h3>按钮属性</h3>
         <el-button plain>朴素按钮</el-button>
