@@ -2,6 +2,8 @@
 import { ElContainer, ElHeader, ElAside, ElMain, ElFooter } from 'element-plus';
 import Vmenu from '@/layout/components/menu.vue';
 
+import Vtabs from '@/layout/components/tabs.vue';
+
 
 const handleCommand = (command) => {
   console.log(command);
@@ -40,8 +42,8 @@ const handleCommand = (command) => {
           <Vmenu></Vmenu>
         </el-aside>
         <el-main>
+          <Vtabs></Vtabs>
           <!--使用router才能访问-->
-          <router-view></router-view>
         </el-main>
       </el-container>
     </el-container>
