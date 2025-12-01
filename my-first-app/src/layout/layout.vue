@@ -2,6 +2,7 @@
 import { ElContainer, ElHeader, ElAside, ElMain, ElFooter } from 'element-plus';
 import Vmenu from '@/layout/components/menu.vue';
 
+
 const handleCommand = (command) => {
   console.log(command);
   //通过不同的command执行不同的操作
@@ -23,6 +24,7 @@ const handleCommand = (command) => {
         <el-dropdown  @command="handleCommand">
           <!-- 改一下字体颜色 -->
           <div style="color: #fff;">头像</div>
+          
           <template #dropdown>
             <el-dropdown-menu >
               <el-dropdown-item command="info">用户信息</el-dropdown-item>

@@ -1,10 +1,16 @@
 <script setup>
 import { ElMenu, ElMenuItem } from 'element-plus';
 
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+
 </script>
 
 <template>
-    <el-menu :router="true">
+    <!-- :default-active="route.path" 用于使当前被选中的处于激活状态-->
+    <!-- :router="true 用于再index中直接激活路由即可跳转-->
+    <el-menu :default-active="route.path" :router="true">
         <el-menu-item index="/main">主要预览</el-menu-item>
         <el-sub-menu index="1">
             <template #title><span>基础案例</span></template>
@@ -20,5 +26,4 @@ import { ElMenu, ElMenuItem } from 'element-plus';
     </el-menu>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
