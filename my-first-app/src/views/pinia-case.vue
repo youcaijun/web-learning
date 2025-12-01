@@ -1,5 +1,4 @@
 <script setup>
- import { defineStore, storeToRefs } from 'pinia';
  import { listStore } from '@/stores/store.js';
 
  // 使用 Pinia 存储
