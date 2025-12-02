@@ -25,6 +25,10 @@ const routes = [
 				path: '/PiniaCase',
 				component: () => import("@/views/pinia-case.vue")
 			},
+			{			
+				path: '/tabsCase',
+				component: () => import("@/views/tabs-case.vue")
+			},
 			{
 				path: "/buttonCase",
 				component: () => import("@/views/el-button-case.vue")
