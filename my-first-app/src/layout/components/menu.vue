@@ -1,7 +1,10 @@
 <script setup>
 import { ElMenu, ElMenuItem } from 'element-plus';
 
+<<<<<<< HEAD
  import { menuStore } from '@/stores/store.js';
+=======
+>>>>>>> parent of 0df96d2 (1)
 
 import { useRoute } from 'vue-router';
 
