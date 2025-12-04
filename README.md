@@ -1,5 +1,11 @@
 ## 用基本的vue3和elementUI-Plus实现简单的后台管理模板
 
+0. 基本布局 ok
+
+    * elementUI-Plus左侧菜单布局 ok
+
+    * 配置菜单路由 ok
+
 1. 使用Pinia ok
 
     * 配置数据 ok
