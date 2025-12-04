@@ -1,16 +1,17 @@
 import { createRouter, createWebHashHistory, createWebHistory } from "vue-router"
 
+
+//全局文件中不应该直接引用pinia中的store,否则会引起循环引用的问题
+// import { userinfoStore } from '@/stores/store.js';
+
+// const userinfo = userinfoStore();
+
 const routes = [
-	// {
-	// 	path: "/button", // http://localhost:8080/
-	// 	name: "Button",
-	// 	component: () => import("@/views/el-button.vue")
-	// },
-	// {
-	// 	path: "/content", // http://localhost:8080/content
-	// 	name: "Content",
-	// 	component: () => import("@/views/content.vue")
-	// },
+	{
+		path: "/login",
+		name: "login",
+		component: () => import("@/views/login.vue")
+	},
 	{
 		path: "/", // http://localhost:8080/content
 		name: "layout",
@@ -42,7 +43,13 @@ const routes = [
 				component: () => import("@/views/labelReport.vue")
 			},
 		]
+	},
+	// 404 页面需要放在最后面
+	{
+	    path: '/:pathMatch(.*)*',
+	    component: () => import('@/layout/components/error/404.vue')
 	}
+
 ]
 
 const router = createRouter({
@@ -51,5 +58,29 @@ const router = createRouter({
 	history: createWebHistory(),
 	routes
 })
+
+router.beforeEach((to, from, next) => {
+	//console.log("路由跳转了", to, from);
+	//如果访问的不是登录页，则需要验证token
+	if (to.path !== '/login') {
+		//获取pinia中的userinfoStore
+			//console.log("userinfoStore:", userinfo);
+			//判断token是否存在
+			import('@/stores/store.js').then(({ userinfoStore }) => {
+				const userinfo = userinfoStore();
+			
+			if (!userinfo.token) {
+				//如果token不存在，跳转到登录页
+				next({ path: '/login' });
+			} else {
+				//token存在，放行
+				next();
+			}
+			});
+	} else {
+		//访问登录页，放行
+		next();
+	}
+});	
 
 export default router

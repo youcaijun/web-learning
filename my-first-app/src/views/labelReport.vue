@@ -62,7 +62,6 @@ const onQuery = (name) => {
 		<el-form-item>
 			<el-button type="primary" @click="onReset()">清空</el-button>
 		</el-form-item>
-
 	</el-form>
 
 	<el-form :inline="true" :model="form" label-width="auto">
@@ -72,9 +71,6 @@ const onQuery = (name) => {
 			<el-form-item label="行业:">
 			<el-input v-model="data.type" />
 		</el-form-item>
-		
-	//
-
 	</el-form>
 
 </template>

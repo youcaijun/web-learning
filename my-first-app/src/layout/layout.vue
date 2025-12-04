@@ -1,15 +1,26 @@
 <script setup>
 import { ElContainer, ElHeader, ElAside, ElMain, ElFooter } from 'element-plus';
+import { useRoute, useRouter } from 'vue-router';
 import Vmenu from '@/layout/components/menu.vue';
 
 import Vtabs from '@/layout/components/tabs.vue';
+
+import { userinfoStore } from '@/stores/store.js';
+
+
+ // 使用 Pinia 存储
+const userinfo = userinfoStore();
+const router = useRouter();
 
 
 const handleCommand = (command) => {
   console.log(command);
   //通过不同的command执行不同的操作
   if (command === 'logout') {
-    alert('退出登录');
+    //清除用户信息
+    userinfo.setname('');
+    userinfo.settoken('');
+    router.push({ path: '/login' });
   }
   if  (command === 'info') {
     alert('用户信息');
@@ -22,6 +33,7 @@ const handleCommand = (command) => {
     <el-container class="wrapper">
       <el-header>
         <div>图片</div>
+        <div>用户名:{{userinfo.name}} token:{{userinfo.token}}</div>
         <!-- 通过指令去执行对应的事件-->
         <el-dropdown  @command="handleCommand">
           <!-- 改一下字体颜色 -->

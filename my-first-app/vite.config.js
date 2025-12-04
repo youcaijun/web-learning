@@ -6,6 +6,7 @@ import path from 'path'
 export default defineConfig({
   plugins: [vue()],
   server: {
+    host:'0.0.0.0', // 允许外部ip访问
     port: 8080, // 自己规定的端口号
   },
   resolve: {
