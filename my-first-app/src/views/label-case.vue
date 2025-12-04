@@ -12,8 +12,6 @@ const data = reactive({
 	type: '',
 
 })
-
-
 //重置
 const onReset = () => {
 	form.name = ''
@@ -45,7 +43,6 @@ const onQuery = (name) => {
 		}
 	})
 }
-
 </script>
 
 <template>

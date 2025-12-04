@@ -3,10 +3,8 @@ import { userinfoStore } from '@/stores/store.js';
 import { reactive, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
-
- // 使用 Pinia 存储
+// 使用 Pinia 存储
 const userinfo = userinfoStore();
-
 //存路由信息
 const router = useRouter();
 const loginForm = reactive({
@@ -25,7 +23,6 @@ const login = () => {
 	}
 }
 </script>
-
 
 <template>
 	<el-form :model="loginForm">
