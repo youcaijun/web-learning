@@ -108,12 +108,17 @@ const currentPageDate = (tableData) => {
 const rowedit = (row) => {
 	alert('编辑行: ' + JSON.stringify(row));
 };
+// 删除行
+const rowdelete = (row) => {
+	alert('删除行: ' + JSON.stringify(row));
+	console.log(scope.$index+JSON.stringify(scope.row));
+};
 </script>
 
 <template>
 	表格示例(前端分页)
 	<br>
-	后端分页可以通过接口传入分页参数实现，和前端分页类似
+	后端分页可以通过接口传入分页参数后后端实现，和前端分页类似
 	<el-table :data="currentPageDate(tableData)" height="250" style="width: 100%">
 		<el-table-column type="selection" :selectable="selectable" width="55" />
 		<el-table-column prop="id" label="id" width="180" />
@@ -127,12 +132,12 @@ const rowedit = (row) => {
         <el-button
           size="small"
           type="danger"
-          @click="console.log(scope.$index+JSON.stringify(scope.row))"
+          @click="rowdelete(scope.row)"
         >
           Delete
         </el-button>
       </template>
-	  </el-table-column>	
+	  </el-table-column>
 	</el-table>
 	<el-pagination 
 		@size-change="handleSizeChange" 

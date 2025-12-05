@@ -19,6 +19,7 @@ const route = useRoute();
             <el-menu-item index="/ButtonCase">按钮案例</el-menu-item>
             <el-menu-item index="/PiniaCase">Pinia案例</el-menu-item>
             <el-menu-item index="/tableCase">表格案例</el-menu-item>
+            <el-menu-item index="/dialogCase">弹窗案例</el-menu-item>
         </el-sub-menu>
         <el-sub-menu index="2">
             <template #title><span>其他案例</span></template>

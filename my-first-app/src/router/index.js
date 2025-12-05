@@ -44,7 +44,11 @@ const routes = [
 			},
 			{
 				path: "/tableCase",
-				component: () => import("@/views/table.vue")
+				component: () => import("@/views/table-case.vue")
+			},
+			{
+				path: "/dialogCase",
+				component: () => import("@/views/dialog-case.vue")
 			},
 		]
 	},
