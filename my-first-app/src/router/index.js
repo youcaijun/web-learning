@@ -42,12 +42,16 @@ const routes = [
 				path: "/labelReport",
 				component: () => import("@/views/labelReport.vue")
 			},
+			{
+				path: "/tableCase",
+				component: () => import("@/views/table.vue")
+			},
 		]
 	},
 	// 404 页面需要放在最后面
 	{
-	    path: '/:pathMatch(.*)*',
-	    component: () => import('@/layout/components/error/404.vue')
+		path: '/:pathMatch(.*)*',
+		component: () => import('@/layout/components/error/404.vue')
 	}
 
 ]
@@ -64,11 +68,11 @@ router.beforeEach((to, from, next) => {
 	//如果访问的不是登录页，则需要验证token
 	if (to.path !== '/login') {
 		//获取pinia中的userinfoStore
-			//console.log("userinfoStore:", userinfo);
-			//判断token是否存在
-			import('@/stores/store.js').then(({ userinfoStore }) => {
-				const userinfo = userinfoStore();
-			
+		//console.log("userinfoStore:", userinfo);
+		//判断token是否存在
+		import('@/stores/store.js').then(({ userinfoStore }) => {
+			const userinfo = userinfoStore();
+
 			if (!userinfo.token) {
 				//如果token不存在，跳转到登录页
 				next({ path: '/login' });
@@ -76,11 +80,11 @@ router.beforeEach((to, from, next) => {
 				//token存在，放行
 				next();
 			}
-			});
+		});
 	} else {
 		//访问登录页，放行
 		next();
 	}
-});	
+});
 
 export default router
