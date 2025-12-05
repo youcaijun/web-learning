@@ -80,8 +80,15 @@ const tableData = [
 		date: '1990-01-14'
 	},
 ]
+
+// 多选框是否可选,需要定义，不然会警告
+const selectable = (row, index) => {
+	return true; // 所有行都可选
+};
 // 分页相关的参数与函数
+// 当前页
 const currentPage = ref(1);
+// 每页条数
 const pageSizes = ref(5);
 const handleSizeChange = (val) => {
 	pageSizes.value = val;
@@ -97,15 +104,35 @@ const currentPageDate = (tableData) => {
 	const end = currentPage.value * pageSizes.value;
 	return tableData.slice(start, end);
 };
+// 编辑行
+const rowedit = (row) => {
+	alert('编辑行: ' + JSON.stringify(row));
+};
 </script>
 
 <template>
-	表格示例
+	表格示例(前端分页)
+	<br>
+	后端分页可以通过接口传入分页参数实现，和前端分页类似
 	<el-table :data="currentPageDate(tableData)" height="250" style="width: 100%">
+		<el-table-column type="selection" :selectable="selectable" width="55" />
 		<el-table-column prop="id" label="id" width="180" />
 		<el-table-column prop="name" label="Name" width="180" />
 		<el-table-column prop="date" label="date" />
-		   
+		<el-table-column label="操作" >
+		<template #default="scope">
+        <el-button size="small" @click="rowedit(scope.row)">
+          Edit
+        </el-button>
+        <el-button
+          size="small"
+          type="danger"
+          @click="console.log(scope.$index+JSON.stringify(scope.row))"
+        >
+          Delete
+        </el-button>
+      </template>
+	  </el-table-column>	
 	</el-table>
 	<el-pagination 
 		@size-change="handleSizeChange" 
