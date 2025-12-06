@@ -14,6 +14,9 @@ import * as echarts from 'echarts';
 import { createPinia } from 'pinia';
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 
+//引用可视化插件 vue-konva
+import VueKonva from 'vue-konva';
+
 /**大小写不一样也会报错 */
 const app = createApp(App);
 //创建 pinia 实例,用于状态管理
@@ -32,4 +35,7 @@ app.use(ElementPlus);
 app.use(pinia);
 /**引用路由机制 */
 app.use(router);
+
+/**引用可视化插件 vue-konva */
+app.use(VueKonva);
 app.mount('#app');

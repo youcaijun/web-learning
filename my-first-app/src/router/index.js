@@ -50,6 +50,10 @@ const routes = [
 				path: "/dialogCase",
 				component: () => import("@/views/dialog-case.vue")
 			},
+			{
+				path: "/konvaCase1",
+				component: () => import("@/knova/knova-case.vue")
+			},
 		]
 	},
 	// 404 页面需要放在最后面
@@ -67,6 +71,7 @@ const router = createRouter({
 	routes
 })
 
+//全局路由守卫
 router.beforeEach((to, from, next) => {
 	//console.log("路由跳转了", to, from);
 	//如果访问的不是登录页，则需要验证token
@@ -76,7 +81,6 @@ router.beforeEach((to, from, next) => {
 		//判断token是否存在
 		import('@/stores/store.js').then(({ userinfoStore }) => {
 			const userinfo = userinfoStore();
-
 			if (!userinfo.token) {
 				//如果token不存在，跳转到登录页
 				next({ path: '/login' });
