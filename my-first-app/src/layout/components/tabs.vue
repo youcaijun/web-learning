@@ -12,10 +12,13 @@ const opentabs = ref([{
 }]);
 //当前的标签页
 const activetab = ref('/main');
+//初始化时根据路由跳转
+router.push({ path: activetab.value });
 
 // 监听路由变化
 watch(() => route.path, val => {
     //检查是否已经存在该tab
+    console.log("路由变化了:" + val);
     const exists = opentabs.value.find(tab => tab.path === val);
     if (!exists) {
         opentabs.value.push({
@@ -38,7 +41,7 @@ const removeTab = (target) => {
     console.log("removeTab:" + target);
     //主页不让删
     if (target == '/main') {
-        return
+        return;
     }
     const index = opentabs.value.findIndex(tab => tab.name === target);
     if (index !== -1) {
@@ -57,7 +60,7 @@ const removeTab = (target) => {
 </script>
 
 <template>
-    <!-- router：{{route.path}}<br>
+     <!-- router：{{route.path}}<br>
     tab:{{activetab}} -->
     <el-tabs v-model="activetab" type="card"  class="demo-tabs" @tab-change="clickTabchange"
         @tab-remove="removeTab" closable>

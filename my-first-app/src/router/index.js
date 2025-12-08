@@ -93,6 +93,7 @@ router.beforeEach((to, from, next) => {
 		//访问登录页，放行
 		next();
 	}
+	//处理刷新时的问题
 });
 
 export default router
