@@ -18,7 +18,7 @@ router.push({ path: activetab.value });
 // 监听路由变化
 watch(() => route.path, val => {
     //检查是否已经存在该tab
-    console.log("路由变化了:" + val);
+    //console.log("路由变化了:" + val);
     const exists = opentabs.value.find(tab => tab.path === val);
     if (!exists) {
         opentabs.value.push({

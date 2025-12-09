@@ -54,6 +54,10 @@ const routes = [
 				path: "/konvaCase1",
 				component: () => import("@/knova/knova-case.vue")
 			},
+			{
+				path: "/SpcCase",
+				component: () => import("@/knova/spc-case.vue")
+			},
 		]
 	},
 	// 404 页面需要放在最后面

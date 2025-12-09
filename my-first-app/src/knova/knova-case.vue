@@ -77,7 +77,7 @@ const openDialog = () => {
 
 <template>
 
-  <el-dialog v-model="dialogTableVisible" title="最近5次操作历史" width="800">
+  <el-dialog v-model="dialogTableVisible" title="最近5次历史" width="800">
     <el-table :data="gridData">
       <el-table-column property="devicename" label="设备名称" width="150" />
       <el-table-column property="evnentname" label="事件名称" width="100" />

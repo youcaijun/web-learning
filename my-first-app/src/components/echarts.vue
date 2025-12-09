@@ -1,14 +1,20 @@
 <script setup>
-import { onMounted, ref, onUnmounted } from 'vue';
+import { onMounted, ref, onUnmounted, defineProps } from 'vue';
 import * as echarts from 'echarts';
- 
+
 const chartRef = ref(null);
 let chartInstance = null;
- 
+
+const props = defineProps({
+  option: Object
+});
+// 初始化图表,加载dom后挂载图表
 onMounted(() => {
   if (chartRef.value) {
     chartInstance = echarts.init(chartRef.value);
-    const option = {
+    // 没有传入option则使用默认配置
+    if(props.option == undefined){
+      const option = {
       title: {
         text: 'ECharts 示例'
       },
@@ -24,9 +30,12 @@ onMounted(() => {
       }]
     };
     chartInstance.setOption(option);
+    } else {
+      chartInstance.setOption(props.option);
+    }
   }
 });
- 
+
 onUnmounted(() => {
   if (chartInstance !== null && chartInstance !== undefined) {
     chartInstance.dispose(); // 销毁实例，释放资源
@@ -35,6 +44,5 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div ref="chartRef" style="width: 600px; height: 400px;"></div>
+  <div ref="chartRef" style="width: 100%; height: 400px;"></div>
 </template>
- 

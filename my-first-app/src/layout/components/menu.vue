@@ -24,7 +24,8 @@ const route = useRoute();
         </el-sub-menu>
          <el-sub-menu index="2">
             <template #title><span>可视化案例</span></template>
-            <el-menu-item index="/konvaCase1">Konva基本案例</el-menu-item>
+            <el-menu-item index="/konvaCase1">Konva案例</el-menu-item>
+            <el-menu-item index="/spcCase">spc案例</el-menu-item>
         </el-sub-menu>
         <el-sub-menu index="3">
             <template #title><span>其他案例</span></template>
