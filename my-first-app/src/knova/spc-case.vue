@@ -2,7 +2,7 @@
 import ECharts from '@/components/echarts.vue';
 import { ref } from 'vue';
 
-// 异常1：1个点落在中心线3σ以外
+// 异常1：点落在中心线3σ以外
 // 设置区间刻度和标记线
 const option1 = ref({
   xAxis: {
@@ -64,7 +64,8 @@ data1.forEach((value, index) => {
   }
 });
 option1.value.series[0].markPoint.data = markPointData;
-// 异常2：连续9个点在中心线同一侧
+
+// 异常2：连续超过9个点在中心线同一侧
 
 const option2 = ref({
   xAxis: {
