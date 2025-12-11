@@ -98,7 +98,7 @@ const option2 = ref({
   series: [
     {
       //异常在中间
-      data: [90, 80, 126, 127, 110, 113, 114, 115, 118, 119, 122, 83, 86, 79, 124],
+      data: [90, 80, 126, 127, 110, 113, 114, 115, 118, 119, 111, 83, 86, 79, 124],
       //异常在尾部
       //data: [90, 80, 126, 127, 110, 113, 114, 115, 118, 119, 122, 111, 110, 114, 124],
       //异常在头部
@@ -155,11 +155,13 @@ const finalMarkPointData2 = [];
 markPointData2.forEach((value, index) => {
   if (index === 0) {
     finalMarkPointData2.push([0, value-1]);
-    //头部需要补数据，否则会缺失
+    //补到下一段的连接数据
     finalMarkPointData2.push([value-1, value ]);
   }
   if (index > 0) {
     finalMarkPointData2.push([markPointData2[index - 1], value - 1]);
+     //补到下一段的连接数据
+    finalMarkPointData2.push([value-1, value]);
   }
   if (index === markPointData2.length - 1) {
     finalMarkPointData2.push([value - 1, data2.length]);
@@ -187,16 +189,16 @@ finalMarkPointData2.forEach((value, index) => {
 </script>
 
 <template>
-  spc案例
+  spc案例1
   <el-row :gutter="20">
-    <el-col :span="12">
+    <el-col :span="11">
       <el-card style="width: 100%">
         <template #header>异常1：存在点落在中心线3σ以外</template>
         <!-- 子组件传值方式: -->
         <ECharts :option=option1></ECharts>
       </el-card>
     </el-col>
-    <el-col :span="12">
+    <el-col :span="10">
       <el-card style="width: 100%">
         <template #header>异常2：超过连续9个点在中心线同一侧</template>
         <ECharts :option=option2></ECharts>

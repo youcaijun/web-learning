@@ -52,11 +52,15 @@ const routes = [
 			},
 			{
 				path: "/konvaCase1",
-				component: () => import("@/knova/knova-case.vue")
+				component: () => import("@/knova/knova-case1.vue")
 			},
 			{
-				path: "/SpcCase",
-				component: () => import("@/knova/spc-case.vue")
+				path: "/SpcCase1",
+				component: () => import("@/knova/spc-case1.vue")
+			},
+			{
+				path: "/SpcCase2",
+				component: () => import("@/knova/spc-case2.vue")
 			},
 		]
 	},
