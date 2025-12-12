@@ -1,10 +1,11 @@
 <script setup>
 import { Utils } from '@/utils/utils';
+import { userinfoStore } from '@/stores/store.js';
 const str = "  你好";
-import { apiUtils,redisUtils } from '@/utils/api';
-const data= {
-        key:"mess",
-        value:"hello api"
+import { apiUtils, redisUtils } from '@/utils/api';
+const data = {
+        key: "mess",
+        value: "hello api"
 }
 
 import { useRouter } from 'vue-router'
@@ -12,7 +13,17 @@ import { useRouter } from 'vue-router'
 const router = useRouter();
 
 const goPath = (path) => {
-	router.push(path);
+        router.push(path);
+}
+const userinfo = userinfoStore();
+const hasRole = () => {
+        if (!userinfo.roles.includes('admin')) {
+                alert(`你没有权限操作`);
+                return;
+        }
+        else {
+                alert(`你有权限操作`);
+        }
 }
 
 </script>
@@ -22,11 +33,12 @@ const goPath = (path) => {
         <h3>按钮</h3>
         <el-button @click="Utils.hello('')">默认按钮</el-button>
         <el-button type="primary" @click="apiUtils.get('mess')">主要按钮</el-button>
-        <el-button type="success"@click="apiUtils.get()">成功按钮</el-button>
+        <el-button type="success" @click="apiUtils.get()">成功按钮</el-button>
         <el-button type="info" @click="redisUtils.get('name')">信息按钮</el-button>
-        <el-button type="warning"@click="redisUtils.set(data)">警告按钮</el-button>
-        <el-button type="danger"@click="redisUtils.get('mess')">危险按钮</el-button>
+        <el-button type="warning" @click="redisUtils.set(data)">警告按钮</el-button>
+        <el-button type="danger" @click="redisUtils.get('mess')">危险按钮</el-button>
         <el-button type="primary" @click="goPath('/main')">回到首页</el-button>
+        <el-button type="primary" @click="hasRole()">admin可点击</el-button>
         <hr>
         <h3>按钮属性</h3>
         <el-button plain>朴素按钮</el-button>

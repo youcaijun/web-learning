@@ -73,7 +73,7 @@ for (let i = 1; i < data.length-1; i++) {
     markPointData.push(i);
   }
 }
-console.log('markPointData:', markPointData);
+//console.log('markPointData:', markPointData);
 // 输出区间数据
 const finalMarkPointData = [];
 markPointData.forEach((value, index) => {
@@ -88,7 +88,7 @@ markPointData.forEach((value, index) => {
     finalMarkPointData.push([value, data.length]);
   }
 });
-console.log('finalMarkPointData2:', finalMarkPointData);
+//console.log('finalMarkPointData2:', finalMarkPointData);
 
 finalMarkPointData.forEach((value, index) => {
   //console.log('value:', value[0], value[1]);

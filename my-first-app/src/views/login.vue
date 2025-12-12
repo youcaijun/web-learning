@@ -18,6 +18,11 @@ const login = () => {
 	if(flag){
 		//存用户信息
 		userinfo.setname(loginForm.name);
+		if(loginForm.name==='admin'){
+			userinfo.setroles('admin');
+		} else{
+			userinfo.setroles('user');
+		}
 		userinfo.settoken(loginForm.password + '_token');
 		router.push({ path: '/main' });
 	}

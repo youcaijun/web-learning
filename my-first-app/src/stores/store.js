@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { reactive, ref } from 'vue'
 
 // pinia 测试案例
 export const listStore = defineStore('listStore', {
@@ -24,7 +24,7 @@ export const userinfoStore = defineStore('userinfoStore', {
         //用户名
         name: ref(''),
         //用户角色
-        roles: ref({}),
+        roles: reactive([]),
         //用户token,校验登录用，后续会存
         token: ref(''),
     }),
@@ -33,8 +33,10 @@ export const userinfoStore = defineStore('userinfoStore', {
         setname(name) {
             this.name = name;
         },
-        setroles(roles) {
-            this.roles = roles;
+        setroles(role) {
+            //console.log("设置角色:", this.roles);
+            //console.log(this.roles);
+            this.roles.push(role);
         },
         settoken(token) {
             this.token = token;

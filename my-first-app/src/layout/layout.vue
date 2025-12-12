@@ -19,6 +19,9 @@ const handleCommand = (command) => {
   if (command === 'logout') {
     //清除用户信息
     userinfo.setname('');
+    //清除角色信息
+    userinfo.roles.length=0;
+    //console.log('退出登录后角色:', userinfo.roles);
     userinfo.settoken('');
     router.push({ path: '/login' });
   }
@@ -33,7 +36,7 @@ const handleCommand = (command) => {
     <el-container class="wrapper">
       <el-header>
         <div>图片</div>
-        <div>用户名:{{userinfo.name}} token:{{userinfo.token}}</div>
+        <div>用户名:{{userinfo.name}} role:{{userinfo.roles}}</div>
         <!-- 通过指令去执行对应的事件-->
         <el-dropdown  @command="handleCommand">
           <!-- 改一下字体颜色 -->
