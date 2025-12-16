@@ -36,7 +36,7 @@ const handleCommand = (command) => {
     <el-container class="wrapper">
       <el-header>
         <div>图片</div>
-        <div>用户名:{{userinfo.name}} role:{{userinfo.roles}}</div>
+        <div>用户名:{{userinfo.name}} roles:{{userinfo.roles}}</div>
         <!-- 通过指令去执行对应的事件-->
         <el-dropdown  @command="handleCommand">
           <!-- 改一下字体颜色 -->

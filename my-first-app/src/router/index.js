@@ -98,10 +98,18 @@ router.beforeEach((to, from, next) => {
 			}
 		});
 	} else {
-		//访问登录页，放行
-		next();
+		//如果是访问登录页面，则确认是否有登录信息，有则跳主页
+		import('@/stores/store.js').then(({ userinfoStore }) => {
+			const userinfo = userinfoStore();
+		if (userinfo.token) {
+				//如果token存在，跳转到主页
+				next({ path: '/main' });
+			} else {
+				//token不存在存在，登录页
+				next();
+			}
+		});
 	}
-	//处理刷新时的问题
 });
 
 export default router

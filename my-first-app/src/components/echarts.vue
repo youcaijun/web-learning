@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref, onUnmounted, defineProps } from 'vue';
+import { onMounted, ref, onUnmounted} from 'vue';
 import * as echarts from 'echarts';
 
 const chartRef = ref(null);
