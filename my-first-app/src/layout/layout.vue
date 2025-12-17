@@ -8,24 +8,24 @@ import Vtabs from '@/layout/components/tabs.vue';
 import { userinfoStore } from '@/stores/store.js';
 
 
- // 使用 Pinia 存储
+// 使用 Pinia 存储
 const userinfo = userinfoStore();
 const router = useRouter();
 
 
 const handleCommand = (command) => {
-  console.log(command);
+  //console.log(command);
   //通过不同的command执行不同的操作
   if (command === 'logout') {
     //清除用户信息
     userinfo.setname('');
     //清除角色信息
-    userinfo.roles.length=0;
+    userinfo.roles.length = 0;
     //console.log('退出登录后角色:', userinfo.roles);
     userinfo.settoken('');
     router.push({ path: '/login' });
   }
-  if  (command === 'info') {
+  if (command === 'info') {
     alert('用户信息');
   }
 }
@@ -36,14 +36,14 @@ const handleCommand = (command) => {
     <el-container class="wrapper">
       <el-header>
         <div>图片</div>
-        <div>用户名:{{userinfo.name}} roles:{{userinfo.roles}}</div>
+        <div>用户名:{{ userinfo.name }} roles:{{ userinfo.roles }}</div>
         <!-- 通过指令去执行对应的事件-->
-        <el-dropdown  @command="handleCommand">
+        <el-dropdown @command="handleCommand">
           <!-- 改一下字体颜色 -->
           <div style="color: #fff;">头像</div>
-          
+
           <template #dropdown>
-            <el-dropdown-menu >
+            <el-dropdown-menu>
               <el-dropdown-item command="info">用户信息</el-dropdown-item>
               <el-dropdown-item disabled>不可选中</el-dropdown-item>
               <el-dropdown-item divided command="logout">退出登录</el-dropdown-item>

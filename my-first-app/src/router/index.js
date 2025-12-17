@@ -55,6 +55,10 @@ const routes = [
 				component: () => import("@/knova/knova-case1.vue")
 			},
 			{
+				path: "/konvaCase2",
+				component: () => import("@/knova/knova-case2.vue")
+			},
+			{
 				path: "/SpcCase1",
 				component: () => import("@/knova/spc-case1.vue")
 			},
@@ -77,7 +81,7 @@ const router = createRouter({
 	//history: createWebHashHistory(), 
 	history: createWebHistory(),
 	routes
-})
+});
 
 //全局路由守卫
 router.beforeEach((to, from, next) => {
@@ -101,7 +105,7 @@ router.beforeEach((to, from, next) => {
 		//如果是访问登录页面，则确认是否有登录信息，有则跳主页
 		import('@/stores/store.js').then(({ userinfoStore }) => {
 			const userinfo = userinfoStore();
-		if (userinfo.token) {
+			if (userinfo.token) {
 				//如果token存在，跳转到主页
 				next({ path: '/main' });
 			} else {

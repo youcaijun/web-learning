@@ -42,6 +42,10 @@ if (userinfo.roles.includes('admin')) {
             children: [{
                 name: "Konva案例1",
                 index: "/konvaCase1"
+            },
+            {
+                name: "Konva案例2",
+                index: "/konvaCase2"
             }, {
                 name: "spc案例1",
                 index: "/spcCase1"

@@ -46,3 +46,21 @@ export const userinfoStore = defineStore('userinfoStore', {
     persist: true,
 });
 
+// 记录设备信息
+// 定义信息
+// name 设备名称
+// status 设备状态
+// positionX X轴位置
+// positionY Y轴位置
+
+export const equipinfoStore = defineStore('equipinfoStore', {
+    state: () => ({
+        //用户名
+       equipmentList:reactive([])
+    }),
+    // 方法
+    actions: {
+    },
+    // 数据持久化,true表示全部持久化
+    persist: true,
+});
