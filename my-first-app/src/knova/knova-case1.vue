@@ -102,6 +102,7 @@ const openDialog = () => {
 </template>
 
 <style scoped>
+  
 .broder {
   border: 1px solid #170e0e;
 }
