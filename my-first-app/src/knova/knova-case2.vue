@@ -99,7 +99,6 @@ const handleDblClick = (e) => {
 };
 
 
-
 //删除元素
 const del = () => {
   let index = equipList.findIndex(item => item.name === nameTextConfig.value.text);
@@ -123,6 +122,7 @@ const handleDragend = (e) => {
 //保存信息
 const save = () => {
   //先删再存
+
   equipinfo.equipmentList.length = 0;
   equipList.forEach((value, index) => {
     equipinfo.equipmentList.push(value)
@@ -183,11 +183,8 @@ const processJsonContent = (jsonContent) => {
     });
   } catch (e) {
     throw (e.message);
+  } finally {
   }
-  finally {
-    return true;
-  }
-  // 在这里处理你的 JSON 数据，例如更新数据模型等
 }
 // const handleSuccess = () => {
 //   console.log('文件上传成功');
@@ -198,10 +195,31 @@ const processJsonContent = (jsonContent) => {
 // const handleRemove = (file, fileList) => {
 //   console.log('移除了文件:', file, fileList);
 // }
+const flag = ref(false)
+let showshowID
 
 
+const  getRandomValue=(value1, value2, value3)=>{
+  const values = [value1, value2, value3]; // 或者你可以直接使用 arguments 或者其他方式来传递参数数组
+  return values[Math.floor(Math.random() * values.length)];
+}
+const task = () => {
+  equipList.forEach((value, index) => {
+    equipList[index].fill = getRandomValue('#FF4733', '#FFA500', '#7CFC00');
+  });
+}
 
-
+const show = () => {
+  if (flag.value === false) {
+    console.log('开启');
+    showshowID = setInterval(task, 2000);
+    flag.value = true;
+  } else {
+    clearInterval(showshowID);
+    console.log('关闭');
+    flag.value = false;
+  }
+}
 
 </script>
 
@@ -212,7 +230,7 @@ const processJsonContent = (jsonContent) => {
   <!--<p>我是名称：{{nameTextConfig.text}}</p>
    <p>{{selectedequipment}}</p>
    <p>{{equipList[selectedequipment]}}</p> -->
-
+  <!-- v-if控制无数据则控件不存在，否则删除时会有bug-->
   <el-drawer v-if="equipList.length > 0" v-model="table" title="设备信息" direction="rtl" size="25%">
     <el-form :model="equipList[selectedequipment]">
       <el-form-item label="名称：">
@@ -234,13 +252,15 @@ const processJsonContent = (jsonContent) => {
       </el-form-item>
     </el-form>
   </el-drawer>
-  <div>设备LAYOUT案例(单击拖动，双击配置)：</div>
+  <div>设备LAYOUT配置案例(单击拖动，双击配置)：</div>
   <div>操作：
     <el-row :gutter="20">
-      <el-button @click="add()">添加</el-button>
+      <el-button style="margin-left: 10px;" @click="add()">添加</el-button>
       <el-button @click="del()">删除当前</el-button>
+      <el-button @click="show()">滚动案例</el-button>
       <el-button @click="save()">保存</el-button>
       <el-button @click="exportlayout()">导出</el-button>
+      <!-- 导出的文件在file文件夹 -->
       <el-upload style="margin-left: 10px;" :before-upload="handleBeforeUpload" accept=".json">
         <el-button>导入</el-button>
       </el-upload>
