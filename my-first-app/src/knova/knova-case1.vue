@@ -76,7 +76,7 @@ const openDialog = () => {
 </script>
 
 <template>
-
+<div>
   <el-dialog v-model="dialogTableVisible" title="最近5次历史" width="800">
     <el-table :data="gridData">
       <el-table-column property="devicename" label="设备名称" width="150" />
@@ -98,6 +98,7 @@ const openDialog = () => {
         <v-rect :config="rectConfig" />
       </v-layer>
     </v-stage>
+  </div>
   </div>
 </template>
 

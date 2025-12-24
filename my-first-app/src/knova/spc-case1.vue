@@ -189,6 +189,7 @@ finalMarkPointData2.forEach((value, index) => {
 </script>
 
 <template>
+  <div>
   spc案例1
   <el-row :gutter="20">
     <el-col :span="11">
@@ -205,6 +206,7 @@ finalMarkPointData2.forEach((value, index) => {
       </el-card>
     </el-col>
   </el-row>
+</div>
 </template>
 
 <style scoped></style>

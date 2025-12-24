@@ -1,0 +1,14 @@
+e:\study\NetCore\bin\Debug\net10.0\NetCore.exe
+E:\study\NetCore\bin\Debug\net10.0\NetCore.deps.json
+E:\study\NetCore\bin\Debug\net10.0\NetCore.runtimeconfig.json
+e:\study\NetCore\bin\Debug\net10.0\NetCore.dll
+e:\study\NetCore\bin\Debug\net10.0\NetCore.pdb
+e:\study\NetCore\obj\Debug\net10.0\NetCore.GeneratedMSBuildEditorConfig.editorconfig
+e:\study\NetCore\obj\Debug\net10.0\NetCore.AssemblyInfoInputs.cache
+e:\study\NetCore\obj\Debug\net10.0\NetCore.AssemblyInfo.cs
+e:\study\NetCore\obj\Debug\net10.0\NetCore.csproj.CoreCompileInputs.cache
+e:\study\NetCore\obj\Debug\net10.0\NetCore.dll
+e:\study\NetCore\obj\Debug\net10.0\refint\NetCore.dll
+e:\study\NetCore\obj\Debug\net10.0\NetCore.pdb
+E:\study\NetCore\obj\Debug\net10.0\NetCore.genruntimeconfig.cache
+E:\study\NetCore\obj\Debug\net10.0\ref\NetCore.dll

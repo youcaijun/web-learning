@@ -224,7 +224,7 @@ const show = () => {
 </script>
 
 <template>
-
+  <div>
   <!-- <p>{{ equipList }}</p> -->
   <!-- 弹窗，双击操作 -->
   <!--<p>我是名称：{{nameTextConfig.text}}</p>
@@ -288,6 +288,7 @@ const show = () => {
       </v-layer>
     </v-stage>
   </div>
+</div>
 </template>
 
 <style scoped></style>
