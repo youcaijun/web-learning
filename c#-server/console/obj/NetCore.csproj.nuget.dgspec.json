@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\study\\NetCore\\NetCore.csproj": {}
+    "E:\\git\\web-learning\\c#-server\\console\\NetCore.csproj": {}
   },
   "projects": {
-    "E:\\study\\NetCore\\NetCore.csproj": {
+    "E:\\git\\web-learning\\c#-server\\console\\NetCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\study\\NetCore\\NetCore.csproj",
+        "projectUniqueName": "E:\\git\\web-learning\\c#-server\\console\\NetCore.csproj",
         "projectName": "NetCore",
-        "projectPath": "E:\\study\\NetCore\\NetCore.csproj",
+        "projectPath": "E:\\git\\web-learning\\c#-server\\console\\NetCore.csproj",
         "packagesPath": "C:\\Users\\A0541\\.nuget\\packages\\",
-        "outputPath": "E:\\study\\NetCore\\obj\\",
+        "outputPath": "E:\\git\\web-learning\\c#-server\\console\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\A0541\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,6 +43,12 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
+          "dependencies": {
+            "System.Data.SQLite": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

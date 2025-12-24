@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "amrjlNcXnIM=",
+  "dgSpecHash": "IPmDboXGL54=",
   "success": true,
-  "projectFilePath": "E:\\study\\NetCore\\NetCore.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "E:\\git\\web-learning\\c#-server\\console\\NetCore.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\A0541\\.nuget\\packages\\system.data.sqlite\\2.0.2\\system.data.sqlite.2.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

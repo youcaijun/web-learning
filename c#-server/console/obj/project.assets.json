@@ -1,11 +1,38 @@
 {
   "version": 3,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "System.Data.SQLite/2.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/System.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/System.Data.SQLite.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "System.Data.SQLite/2.0.2": {
+      "sha512": "yAwxkraZf1PazyLg1sqMAlh4KEtaa2L8zieLicd9oWBybrb3SoPph+WVIyUTFWwtTVhNX/jNsDew6tbB8bw2xQ==",
+      "type": "package",
+      "path": "system.data.sqlite/2.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net471/System.Data.SQLite.dll",
+        "lib/netstandard2.0/System.Data.SQLite.dll",
+        "lib/netstandard2.1/System.Data.SQLite.dll",
+        "system.data.sqlite.2.0.2.nupkg.sha512",
+        "system.data.sqlite.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "System.Data.SQLite >= 2.0.2"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\A0541\\.nuget\\packages\\": {}
@@ -13,11 +40,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\study\\NetCore\\NetCore.csproj",
+      "projectUniqueName": "E:\\git\\web-learning\\c#-server\\console\\NetCore.csproj",
       "projectName": "NetCore",
-      "projectPath": "E:\\study\\NetCore\\NetCore.csproj",
+      "projectPath": "E:\\git\\web-learning\\c#-server\\console\\NetCore.csproj",
       "packagesPath": "C:\\Users\\A0541\\.nuget\\packages\\",
-      "outputPath": "E:\\study\\NetCore\\obj\\",
+      "outputPath": "E:\\git\\web-learning\\c#-server\\console\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\A0541\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -49,6 +76,12 @@
     "frameworks": {
       "net10.0": {
         "targetAlias": "net10.0",
+        "dependencies": {
+          "System.Data.SQLite": {
+            "target": "Package",
+            "version": "[2.0.2, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

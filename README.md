@@ -1,6 +1,6 @@
 ### 个人学习使用
 
-### 数据库：使用sqlite凑合一下：study.db文件
+#### 数据库：使用sqlite凑合一下：study.db文件
 
 #### 前端:my-first-app，使用vu3+js+Pinia+ElementUIPlus
 
@@ -83,7 +83,11 @@
 1. 
 
 ##### 学习进度:
-0. 命令行程序：
+
+1. 连接数据库，e_sqlite3.dll需要放在bin文件下面
+1. 命令行程序：
+
+
 
 #### 后端：java-server:java后端功能实现
 
