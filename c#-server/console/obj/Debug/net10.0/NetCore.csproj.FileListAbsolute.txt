@@ -30,3 +30,4 @@ E:\git\web-learning\c#-server\console\obj\Debug\net10.0\ref\NetCore.dll
 E:\git\web-learning\c#-server\console\bin\Debug\net10.0\System.Data.SQLite.dll
 E:\git\web-learning\c#-server\console\obj\Debug\net10.0\NetCore.csproj.AssemblyReference.cache
 E:\git\web-learning\c#-server\console\obj\Debug\net10.0\NetCore.csproj.Up2Date
+E:\git\web-learning\c#-server\console\bin\Debug\net10.0\Dapper.dll

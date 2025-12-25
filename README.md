@@ -85,8 +85,10 @@
 ##### 学习进度:
 
 1. 连接数据库，e_sqlite3.dll需要放在bin文件下面
-1. 命令行程序：
 
+2. jdbc实现sql参考：SQLiteCase1
+
+3. orm框架：Dapper，实现查询和非查询，支持参数化和对象操作
 
 
 #### 后端：java-server:java后端功能实现
