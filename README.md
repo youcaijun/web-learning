@@ -80,16 +80,23 @@
 先学命令行搞一下增删改查对接sqllite，再实现对应的接口
 
 ##### 启动方式：
-1. 
+1. webapi项目创建参考：https://learn.microsoft.com/zh-cn/training/modules/build-web-api-aspnet-core/3-exercise-create-web-api
+~~~bash
+    ## 创建项目
+    dotnet new webapi -controllers
+    ## 编译&启动项目
+    dotnet run
+~~~
 
 ##### 学习进度:
 
-1. 连接数据库，e_sqlite3.dll需要放在bin文件下面
+1. 连接数据库，e_sqlite3.dll需要放在bin文件下面 ok
 
-2. jdbc实现sql参考：SQLiteCase1
+2. jdbc实现sql参考：SQLiteCase1 ok
 
-3. orm框架：Dapper，实现查询和非查询，支持参数化和对象操作
+3. orm框架：Dapper，实现查询和非查询，支持参数化和对象操作 ok
 
+4. webapi：实现get和post请求，controller案例：https://blog.csdn.net/LZYself/article/details/153929204
 
 #### 后端：java-server:java后端功能实现
 

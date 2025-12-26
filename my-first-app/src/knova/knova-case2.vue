@@ -1,5 +1,5 @@
 <script setup>
-import { reactive, ref } from 'vue';
+import { reactive, ref,onBeforeUnmount  } from 'vue';
 import { equipinfoStore } from '@/stores/store.js'
 import { ElMessage } from 'element-plus'
 
@@ -197,19 +197,19 @@ const processJsonContent = (jsonContent) => {
 // }
 const flag = ref(false)
 let showshowID
-
-
-const  getRandomValue=(value1, value2, value3)=>{
+const getRandomValue = (value1, value2, value3) => {
   const values = [value1, value2, value3]; // 或者你可以直接使用 arguments 或者其他方式来传递参数数组
   return values[Math.floor(Math.random() * values.length)];
 }
 const task = () => {
+  console.log('执行中');
   equipList.forEach((value, index) => {
     equipList[index].fill = getRandomValue('#FF4733', '#FFA500', '#7CFC00');
   });
 }
 
 const show = () => {
+
   if (flag.value === false) {
     console.log('开启');
     showshowID = setInterval(task, 2000);
@@ -221,74 +221,81 @@ const show = () => {
   }
 }
 
+//组件卸载前事件
+onBeforeUnmount(() => {
+// 组件卸载前关闭全局事件
+clearInterval(showshowID);
+});
+
+
 </script>
 
 <template>
   <div>
-  <!-- <p>{{ equipList }}</p> -->
-  <!-- 弹窗，双击操作 -->
-  <!--<p>我是名称：{{nameTextConfig.text}}</p>
+    <!-- <p>{{ equipList }}</p> -->
+    <!-- 弹窗，双击操作 -->
+    <!--<p>我是名称：{{nameTextConfig.text}}</p>
    <p>{{selectedequipment}}</p>
    <p>{{equipList[selectedequipment]}}</p> -->
-  <!-- v-if控制无数据则控件不存在，否则删除时会有bug-->
-  <el-drawer v-if="equipList.length > 0" v-model="table" title="设备信息" direction="rtl" size="25%">
-    <el-form :model="equipList[selectedequipment]">
-      <el-form-item label="名称：">
-        <el-input v-model="equipList[selectedequipment].name" autocomplete="off" />
-      </el-form-item>
-      <!--数字必须是数字，否则会出bug-->
-      <el-form-item label="x坐标：">
-        <el-input v-model.number="equipList[selectedequipment].x" autocomplete="off" />
-      </el-form-item>
-      <el-form-item label="y坐标：">
-        <el-input v-model.number="equipList[selectedequipment].y" autocomplete="off" />
-      </el-form-item>
-      <el-form-item label="状态：">
-        <el-select v-model="equipList[selectedequipment].fill" placeholder="Select">
-          <el-option label="停机" value="#FF4733" />
-          <el-option label="待机" value="#FFA500" />
-          <el-option label="生产中" value="#7CFC00" />
-        </el-select>
-      </el-form-item>
-    </el-form>
-  </el-drawer>
-  <div>设备LAYOUT配置案例(单击拖动，双击配置)：</div>
-  <div>操作：
-    <el-row :gutter="20">
-      <el-button style="margin-left: 10px;" @click="add()">添加</el-button>
-      <el-button @click="del()">删除当前</el-button>
-      <el-button @click="show()">滚动案例</el-button>
-      <el-button @click="save()">保存</el-button>
-      <el-button @click="exportlayout()">导出</el-button>
-      <!-- 导出的文件在file文件夹 -->
-      <el-upload style="margin-left: 10px;" :before-upload="handleBeforeUpload" accept=".json">
-        <el-button>导入</el-button>
-      </el-upload>
-    </el-row>
+    <!-- v-if控制无数据则控件不存在，否则删除时会有bug-->
+    <el-drawer v-if="equipList.length > 0" v-model="table" title="设备信息" direction="rtl" size="25%">
+      <el-form :model="equipList[selectedequipment]">
+        <el-form-item label="名称：">
+          <el-input v-model="equipList[selectedequipment].name" autocomplete="off" />
+        </el-form-item>
+        <!--数字必须是数字，否则会出bug-->
+        <el-form-item label="x坐标：">
+          <el-input v-model.number="equipList[selectedequipment].x" autocomplete="off" />
+        </el-form-item>
+        <el-form-item label="y坐标：">
+          <el-input v-model.number="equipList[selectedequipment].y" autocomplete="off" />
+        </el-form-item>
+        <el-form-item label="状态：">
+          <el-select v-model="equipList[selectedequipment].fill" placeholder="Select">
+            <el-option label="停机" value="#FF4733" />
+            <el-option label="待机" value="#FFA500" />
+            <el-option label="生产中" value="#7CFC00" />
+          </el-select>
+        </el-form-item>
+      </el-form>
+    </el-drawer>
+    <div>设备LAYOUT配置案例(单击拖动，双击配置)：</div>
+    <div>操作：
+      <el-row :gutter="20">
+        <el-button style="margin-left: 10px;" @click="add()">添加</el-button>
+        <el-button @click="del()">删除当前</el-button>
+        <el-button @click="show()">滚动案例</el-button>
+        <el-button @click="save()">保存</el-button>
+        <el-button @click="exportlayout()">导出</el-button>
+        <!-- 导出的文件在file文件夹 -->
+        <el-upload style="margin-left: 10px;" :before-upload="handleBeforeUpload" accept=".json">
+          <el-button>导入</el-button>
+        </el-upload>
+      </el-row>
+    </div>
+    <div>画布：</div>
+    <div>
+      <v-stage :config="stageConfig">
+        <!-- 次序决定位置高低，除了可拖拽会变化高度-->
+        <v-layer>
+          <v-rect :config="rectConfig" />
+          <v-text :config="simpleTextConfig"></v-text>
+          <v-text :config="nameTextConfig"></v-text>
+          <v-rect v-for="(item, index) in equipList" :key="index" :config="{
+            name: item.name,
+            x: item.x,
+            y: item.y,
+            width: 50,
+            height: 50,
+            fill: item.fill,
+            stroke: 'black',
+            cornerRadius: 10,
+            draggable: true,
+          }" @mousedown="mousedown" @dblclick="handleDblClick" @dragend="handleDragend" />
+        </v-layer>
+      </v-stage>
+    </div>
   </div>
-  <div>画布：</div>
-  <div>
-    <v-stage :config="stageConfig">
-      <!-- 次序决定位置高低，除了可拖拽会变化高度-->
-      <v-layer>
-        <v-rect :config="rectConfig" />
-        <v-text :config="simpleTextConfig"></v-text>
-        <v-text :config="nameTextConfig"></v-text>
-        <v-rect v-for="(item, index) in equipList" :key="index" :config="{
-          name: item.name,
-          x: item.x,
-          y: item.y,
-          width: 50,
-          height: 50,
-          fill: item.fill,
-          stroke: 'black',
-          cornerRadius: 10,
-          draggable: true,
-        }" @mousedown="mousedown" @dblclick="handleDblClick" @dragend="handleDragend" />
-      </v-layer>
-    </v-stage>
-  </div>
-</div>
 </template>
 
 <style scoped></style>

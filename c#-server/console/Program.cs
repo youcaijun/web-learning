@@ -10,20 +10,22 @@ Console.WriteLine("主启动类");
 //全表查询
 Console.WriteLine("全表查询：");
 UserInfoDapper userInfoDapper = new();
-List<UserInfo> Queryresult1 = userInfoDapper.getAllUser();
+List<UserInfo> Queryresult1 = userInfoDapper.GetAllUser();
 foreach (UserInfo user in Queryresult1)
 {
     Console.WriteLine(user.ToString());
 }
+
 Console.WriteLine("条件查询：");
 Dictionary<String, Object> Params = [];
 Params.Add("name", "am");
 Params.Add("age", 23);
-List<UserInfo> Queryresult2 = userInfoDapper.getUserByParams(Params);
+List<UserInfo> Queryresult2 = userInfoDapper.GetUserByParams(Params);
 foreach (UserInfo user in Queryresult2)
 {
     Console.WriteLine(user.ToString());
 }
+
 //非查询语句
 Console.WriteLine("批量插入：");
 List<UserInfo> insertParams1 = [
@@ -31,8 +33,7 @@ List<UserInfo> insertParams1 = [
     new UserInfo { Name = "Bob", Age = 25 }
 ];
 Boolean insertresult3 = userInfoDapper.Insert(insertParams1);
-
- Console.WriteLine("插入结果："+insertresult3);
+Console.WriteLine("插入结果："+insertresult3);
 
 
 

@@ -60,7 +60,6 @@ public class UserInfoDapper
         int result = con.Execute(sql,users);
         return result>0;
     }
-
 }
 
 
