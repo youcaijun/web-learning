@@ -78,6 +78,9 @@
 #### 后端：C#-server:C#后端功能实现
 
 先学命令行搞一下增删改查对接sqllite，再实现对应的接口
+##### 基础工具
+
+1. Nuget：包管理器，问题点：解决无法安装，参考环境部署
 
 ##### 启动方式：
 1. webapi项目创建参考：https://learn.microsoft.com/zh-cn/training/modules/build-web-api-aspnet-core/3-exercise-create-web-api
