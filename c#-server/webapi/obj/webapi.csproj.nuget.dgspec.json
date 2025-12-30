@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Code\\前端\\web-learning\\c#-server\\webapi\\webapi.csproj": {}
+    "E:\\git\\web-learning\\c#-server\\webapi\\webapi.csproj": {}
   },
   "projects": {
-    "D:\\Code\\前端\\web-learning\\c#-server\\webapi\\webapi.csproj": {
+    "E:\\git\\web-learning\\c#-server\\webapi\\webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Code\\前端\\web-learning\\c#-server\\webapi\\webapi.csproj",
+        "projectUniqueName": "E:\\git\\web-learning\\c#-server\\webapi\\webapi.csproj",
         "projectName": "webapi",
-        "projectPath": "D:\\Code\\前端\\web-learning\\c#-server\\webapi\\webapi.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\Code\\前端\\web-learning\\c#-server\\webapi\\obj\\",
+        "projectPath": "E:\\git\\web-learning\\c#-server\\webapi\\webapi.csproj",
+        "packagesPath": "C:\\Users\\A0541\\.nuget\\packages\\",
+        "outputPath": "E:\\git\\web-learning\\c#-server\\webapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\A0541\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"

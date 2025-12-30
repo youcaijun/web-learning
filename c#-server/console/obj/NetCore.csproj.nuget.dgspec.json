@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Code\\前端\\web-learning\\c#-server\\console\\NetCore.csproj": {}
+    "E:\\git\\web-learning\\c#-server\\console\\NetCore.csproj": {}
   },
   "projects": {
-    "D:\\Code\\前端\\web-learning\\c#-server\\console\\NetCore.csproj": {
+    "E:\\git\\web-learning\\c#-server\\console\\NetCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Code\\前端\\web-learning\\c#-server\\console\\NetCore.csproj",
+        "projectUniqueName": "E:\\git\\web-learning\\c#-server\\console\\NetCore.csproj",
         "projectName": "NetCore",
-        "projectPath": "D:\\Code\\前端\\web-learning\\c#-server\\console\\NetCore.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\Code\\前端\\web-learning\\c#-server\\console\\obj\\",
+        "projectPath": "E:\\git\\web-learning\\c#-server\\console\\NetCore.csproj",
+        "packagesPath": "C:\\Users\\A0541\\.nuget\\packages\\",
+        "outputPath": "E:\\git\\web-learning\\c#-server\\console\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\A0541\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"

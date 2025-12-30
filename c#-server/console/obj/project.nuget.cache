@@ -1,18 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "KOBN/QE3Rt8=",
+  "dgSpecHash": "Q/ypAV6i3wo=",
   "success": true,
-  "projectFilePath": "D:\\Code\\前端\\web-learning\\c#-server\\console\\NetCore.csproj",
+  "projectFilePath": "E:\\git\\web-learning\\c#-server\\console\\NetCore.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Administrator\\.nuget\\packages\\asmresolver\\5.5.1\\asmresolver.5.5.1.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\asmresolver.dotnet\\5.5.1\\asmresolver.dotnet.5.5.1.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\asmresolver.pe\\5.5.1\\asmresolver.pe.5.5.1.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\asmresolver.pe.file\\5.5.1\\asmresolver.pe.file.5.5.1.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\dependencyinjection.service\\1.0.1\\dependencyinjection.service.1.0.1.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\10.0.1\\microsoft.extensions.dependencyinjection.10.0.1.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.1\\microsoft.extensions.dependencyinjection.abstractions.10.0.1.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\system.data.sqlite\\2.0.2\\system.data.sqlite.2.0.2.nupkg.sha512"
+    "C:\\Users\\A0541\\.nuget\\packages\\asmresolver\\5.5.1\\asmresolver.5.5.1.nupkg.sha512",
+    "C:\\Users\\A0541\\.nuget\\packages\\asmresolver.dotnet\\5.5.1\\asmresolver.dotnet.5.5.1.nupkg.sha512",
+    "C:\\Users\\A0541\\.nuget\\packages\\asmresolver.pe\\5.5.1\\asmresolver.pe.5.5.1.nupkg.sha512",
+    "C:\\Users\\A0541\\.nuget\\packages\\asmresolver.pe.file\\5.5.1\\asmresolver.pe.file.5.5.1.nupkg.sha512",
+    "C:\\Users\\A0541\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
+    "C:\\Users\\A0541\\.nuget\\packages\\dependencyinjection.service\\1.0.1\\dependencyinjection.service.1.0.1.nupkg.sha512",
+    "C:\\Users\\A0541\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\10.0.1\\microsoft.extensions.dependencyinjection.10.0.1.nupkg.sha512",
+    "C:\\Users\\A0541\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.1\\microsoft.extensions.dependencyinjection.abstractions.10.0.1.nupkg.sha512",
+    "C:\\Users\\A0541\\.nuget\\packages\\system.data.sqlite\\2.0.2\\system.data.sqlite.2.0.2.nupkg.sha512"
   ],
   "logs": []
 }
