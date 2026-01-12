@@ -11,7 +11,15 @@ const route = useRoute();
 const menu = reactive([]);
 
 //菜单数据,根据后端返回的权限路由数据动态生成菜单,模拟权限控制
-if (userinfo.roles.includes('admin')) {
+console.log('当前用户角色:', userinfo.roles.list.length);
+if (userinfo.roles.list.length == undefined || userinfo.roles.list.length == 0) {
+    console.log('当前用户无角色');
+     menu.push({
+        name: "主要预览",
+        index: "/main"
+    });
+} else {
+if (userinfo.roles.list.includes('admin')) {
     console.log('当前用户是admin角色');
     menu.push({
         name: "主要预览",
@@ -113,8 +121,7 @@ if (userinfo.roles.includes('admin')) {
             }]
         });
 }
-
-
+}
 </script>
 
 <template>

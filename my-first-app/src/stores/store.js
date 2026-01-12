@@ -24,7 +24,7 @@ export const userinfoStore = defineStore('userinfoStore', {
         //用户名
         name: ref(''),
         //用户角色
-        roles: reactive([]),
+        roles: reactive({ list: [] }),
         //用户token,校验登录用，后续会存
         token: ref(''),
     }),
@@ -34,16 +34,18 @@ export const userinfoStore = defineStore('userinfoStore', {
             this.name = name;
         },
         setroles(role) {
-            //console.log("设置角色:", this.roles);
             //console.log(this.roles);
-            this.roles.push(role);
+            let index = this.roles.list.findIndex(item => item === role);
+            if (index == -1) {
+                this.roles.list.push(role);
+            }
         },
         settoken(token) {
             this.token = token;
         }
     },
     // 数据持久化,true表示全部持久化
-    persist: true,
+    persist: false,
 });
 
 // 记录设备信息
@@ -56,7 +58,7 @@ export const userinfoStore = defineStore('userinfoStore', {
 export const equipinfoStore = defineStore('equipinfoStore', {
     state: () => ({
         //用户名
-       equipmentList:reactive([])
+        equipmentList: reactive([])
     }),
     // 方法
     actions: {

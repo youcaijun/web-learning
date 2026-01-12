@@ -20,7 +20,8 @@ const handleCommand = (command) => {
     //清除用户信息
     userinfo.setname('');
     //清除角色信息
-    userinfo.roles.length = 0;
+    userinfo.roles.list.length = 0;
+    //console.log(userinfo.roles.list);
     //console.log('退出登录后角色:', userinfo.roles);
     userinfo.settoken('');
     router.push({ path: '/login' });

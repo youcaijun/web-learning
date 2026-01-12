@@ -14,18 +14,17 @@ const loginForm = reactive({
 
 // 登录
 const login = () => {
-	let flag = true;
-	if(flag){
 		//存用户信息
 		userinfo.setname(loginForm.name);
-		if(loginForm.name==='admin'){
+		//userinfo.setroles('admin');
+		if(loginForm.name=='admin'){
 			userinfo.setroles('admin');
 		} else{
 			userinfo.setroles('user');
 		}
+		console.log(userinfo);
 		userinfo.settoken(loginForm.password + '_token');
 		router.push({ path: '/main' });
-	}
 }
 </script>
 
