@@ -1,4 +1,4 @@
-### 个人学习使用
+### 个人使用
 
 #### 数据库：使用sqlite凑合一下：study.db文件
 
@@ -13,7 +13,7 @@
     npm run dev
 ~~~
 
-##### 学习进度:
+##### 实现进度:
 
 1. 基本布局 ok
 
@@ -77,7 +77,6 @@
 
 #### 后端：C#-server:C#后端功能实现
 
-先学命令行搞一下增删改查对接sqllite，再实现对应的接口
 ##### 基础工具
 
 1. Nuget：包管理器，问题点：解决无法安装，参考环境部署
@@ -91,7 +90,7 @@
     dotnet run
 ~~~
 
-##### 学习进度:
+##### 实现进度:
 
 1. 连接数据库，e_sqlite3.dll需要放在bin文件下面 ok
 
@@ -99,16 +98,22 @@
 
 3. orm框架：Dapper，实现查询和非查询，支持参数化和对象操作 ok
 
-4. webapi：实现get和post请求，controller案例：https://blog.csdn.net/LZYself/article/details/153929204
+4. webapi：实现get和post请求，controller案例：https://blog.csdn.net/LZYself/article/details/153929204 ok
+
+  特殊点：（1）实现响应后返回json结果和前端的接收，和java保持一致 ok
+    ~~~json
+    {  "code ":200,  "message " : "成功", "data" : "{\"id\":1,\"Name\":\"am\"}" }
+    ~~~
+    （2） 使用扩展方法注册服务，实现依赖注入，和spring类型，需要注册对应的类才可使用 ok
 
 #### 后端：java-server:java后端功能实现
 
 实现对应的接口
 
 ##### 启动方式：
-1. 
+1. spring自动启动，打包为jar包即可
 
-##### 学习进度:
+##### 实现进度:
 
 
 
