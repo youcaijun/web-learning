@@ -45,7 +45,7 @@ export const userinfoStore = defineStore('userinfoStore', {
         }
     },
     // 数据持久化,true表示全部持久化
-    persist: false,
+    persist: true,
 });
 
 // 记录设备信息

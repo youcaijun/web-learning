@@ -7,11 +7,11 @@ const router = useRouter();
 //存菜单信息
 //打开的tabs
 const opentabs = ref([{
-    name: '/main',
-    path: '/main'
+    name: '/myapp/main',
+    path: '/myapp/main'
 }]);
 //当前的标签页
-const activetab = ref('/main');
+const activetab = ref('/myapp/main');
 //初始化时根据路由跳转
 router.push({ path: activetab.value });
 
@@ -40,7 +40,7 @@ const clickTabchange = () => {
 const removeTab = (target) => {
     console.log("removeTab:" + target);
     //主页不让删
-    if (target == '/main') {
+    if (target == '/myapp/main') {
         return;
     }
     const index = opentabs.value.findIndex(tab => tab.name === target);

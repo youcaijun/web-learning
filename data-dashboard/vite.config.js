@@ -4,11 +4,10 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // 配合打包使用相对路径
-  publicPath:'/myapp/',
+   // 配合Tomcat
+  //打包时使用相对路径
   base:'./',
   plugins: [vue()],
-
   server: {
     host:'0.0.0.0', // 允许外部ip访问
     port: 8080, // 自己规定的端口号

@@ -8,69 +8,69 @@ import { createRouter, createWebHashHistory, createWebHistory } from "vue-router
 
 const routes = [
 	{
-		path: "/login",
+		path: "/myapp/login",
 		name: "login",
 		component: () => import("@/views/login.vue")
 	},
 	{
-		path: "/", // http://localhost:8080/content
+		path: "/myapp", // http://localhost:8080/content
 		name: "layout",
 		//	component: () => import("@/old/index.vue"),
 		component: () => import("@/layout/layout.vue"),
 		children: [ // 子路由
 			{
-				path: '/main',
+				path: '/myapp/main',
 				component: () => import("@/views/main.vue")
 			},
 			{
-				path: '/PiniaCase',
+				path: '/myapp/PiniaCase',
 				component: () => import("@/views/pinia-case.vue")
 			},
 			{
-				path: "/buttonCase",
+				path: "/myapp/buttonCase",
 				component: () => import("@/views/el-button-case.vue")
 			},
 			{
-				path: '/content',
+				path: '/myapp/content',
 				component: () => import("@/views/content.vue")
 			},
 			{
-				path: "/labelCase",
+				path: "/myapp/labelCase",
 				component: () => import("@/views/label-case.vue")
 			},
 			{
-				path: "/labelReport",
+				path: "/myapp/labelReport",
 				component: () => import("@/views/labelReport.vue")
 			},
 			{
-				path: "/tableCase",
+				path: "/myapp/tableCase",
 				component: () => import("@/views/table-case.vue")
 			},
 			{
-				path: "/dialogCase",
+				path: "/myapp/dialogCase",
 				component: () => import("@/views/dialog-case.vue")
 			},
 			{
-				path: "/konvaCase1",
+				path: "/myapp/konvaCase1",
 				component: () => import("@/knova/knova-case1.vue")
 			},
 			{
-				path: "/konvaCase2",
+				path: "/myapp/konvaCase2",
 				component: () => import("@/knova/knova-case2.vue")
 			},
 			{
-				path: "/SpcCase1",
+				path: "/myapp/SpcCase1",
 				component: () => import("@/knova/spc-case1.vue")
 			},
 			{
-				path: "/SpcCase2",
+				path: "/myapp/SpcCase2",
 				component: () => import("@/knova/spc-case2.vue")
 			},
 		]
 	},
 	// 404 页面需要放在最后面
 	{
-		path: '/:pathMatch(.*)*',
+		path: '/myapp/:pathMatch(.*)*',
 		component: () => import('@/layout/components/error/404.vue')
 	}
 
@@ -87,7 +87,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
 	//console.log("路由跳转了", to, from);
 	//如果访问的不是登录页，则需要验证token
-	if (to.path !== '/login') {
+	if (to.path !== '/myapp/login') {
 		//获取pinia中的userinfoStore
 		//console.log("userinfoStore:", userinfo);
 		//判断token是否存在
@@ -95,7 +95,7 @@ router.beforeEach((to, from, next) => {
 			const userinfo = userinfoStore();
 			if (!userinfo.token) {
 				//如果token不存在，跳转到登录页
-				next({ path: '/login' });
+				next({ path: '/myapp/login' });
 			} else {
 				//token存在，放行
 				next();
@@ -107,7 +107,7 @@ router.beforeEach((to, from, next) => {
 			const userinfo = userinfoStore();
 			if (userinfo.token) {
 				//如果token存在，跳转到主页
-				next({ path: '/main' });
+				next({ path: '/myapp/main' });
 			} else {
 				//token不存在存在，登录页
 				next();

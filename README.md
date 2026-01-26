@@ -8,10 +8,20 @@
 
 安装node.js，安装npm包管理器，打开文件夹后运行：
 ~~~ bash
+
+npm init vite@latest data-dashboard -- --template vue
     cd my-first-app
     npm install
     npm run dev
 ~~~
+
+##### 打包到tomcat：
+
+~~~ bash
+    cd my-first-app
+    npm run build
+~~~
+    注意将WEB-INF文件夹放入指定路径下，解决能访问但刷新后404的问题
 
 ##### 实现进度:
 

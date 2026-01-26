@@ -24,7 +24,7 @@ const login = () => {
 		}
 		console.log(userinfo);
 		userinfo.settoken(loginForm.password + '_token');
-		router.push({ path: '/main' });
+		router.push({ path: '/myapp/main' });
 }
 </script>
 

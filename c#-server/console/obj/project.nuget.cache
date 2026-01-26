@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "pAyO9CdxYtQ=",
-=======
   "dgSpecHash": "Q/ypAV6i3wo=",
->>>>>>> 19a6603e14d4f07306394ac577f6ace9ef0b6f57
   "success": true,
   "projectFilePath": "E:\\git\\web-learning\\c#-server\\console\\NetCore.csproj",
   "expectedPackageFiles": [
@@ -18,5 +14,15 @@
     "C:\\Users\\A0541\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.1\\microsoft.extensions.dependencyinjection.abstractions.10.0.1.nupkg.sha512",
     "C:\\Users\\A0541\\.nuget\\packages\\system.data.sqlite\\2.0.2\\system.data.sqlite.2.0.2.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "message": "Problem reading the cache file E:\\git\\web-learning\\c#-server\\console\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
+      "projectPath": "E:\\git\\web-learning\\c#-server\\console\\NetCore.csproj",
+      "warningLevel": 1,
+      "filePath": "E:\\git\\web-learning\\c#-server\\console\\NetCore.csproj",
+      "targetGraphs": []
+    }
+  ]
 }

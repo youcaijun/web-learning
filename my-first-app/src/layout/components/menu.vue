@@ -16,32 +16,32 @@ if (userinfo.roles.list.length == undefined || userinfo.roles.list.length == 0) 
     console.log('当前用户无角色');
      menu.push({
         name: "主要预览",
-        index: "/main"
+        index: "/myapp/main"
     });
 } else {
 if (userinfo.roles.list.includes('admin')) {
     console.log('当前用户是admin角色');
     menu.push({
         name: "主要预览",
-        index: "/main"
+        index: "/myapp/main"
     }, {
         name: "基础案例",
         index: "1",
         children: [{
             name: "表单案例",
-            index: "/labelCase"
+            index: "/myapp/labelCase"
         }, {
             name: "按钮案例",
-            index: "/ButtonCase"
+            index: "/myapp/ButtonCase"
         }, {
             name: "Pinia案例",
-            index: "/PiniaCase"
+            index: "/myapp/PiniaCase"
         }, {
             name: "表格案例",
-            index: "/tableCase"
+            index: "/myapp/tableCase"
         }, {
             name: "弹窗案例",
-            index: "/dialogCase"
+            index: "/myapp/dialogCase"
         }]
     },
         {
@@ -49,17 +49,17 @@ if (userinfo.roles.list.includes('admin')) {
             index: "2",
             children: [{
                 name: "Konva案例1",
-                index: "/konvaCase1"
+                index: "/myapp/konvaCase1"
             },
             {
                 name: "Konva案例2",
-                index: "/konvaCase2"
+                index: "/myapp/konvaCase2"
             }, {
                 name: "spc案例1",
-                index: "/spcCase1"
+                index: "/myapp/spcCase1"
             }, {
                 name: "spc案例2",
-                index: "/spcCase2"
+                index: "/myapp/spcCase2"
             }]
         },
         {
@@ -85,25 +85,25 @@ if (userinfo.roles.list.includes('admin')) {
     console.log('当前用户不是admin角色');
     menu.push({
         name: "主要预览",
-        index: "/main"
+        index: "/myapp/main"
     }, {
         name: "基础案例",
         index: "1",
         children: [{
             name: "表单案例",
-            index: "/labelCase"
+            index: "/myapp/labelCase"
         }, {
             name: "按钮案例",
-            index: "/ButtonCase"
+            index: "/myapp/ButtonCase"
         }, {
             name: "Pinia案例",
-            index: "/PiniaCase"
+            index: "/myapp/PiniaCase"
         }, {
             name: "表格案例",
-            index: "/tableCase"
+            index: "/myapp/tableCase"
         }, {
             name: "弹窗案例",
-            index: "/dialogCase"
+            index: "/myapp/dialogCase"
         }]
     },
         {
@@ -111,13 +111,13 @@ if (userinfo.roles.list.includes('admin')) {
             index: "2",
             children: [{
                 name: "Konva案例1",
-                index: "/konvaCase1"
+                index: "/myapp/konvaCase1"
             }, {
                 name: "spc案例1",
-                index: "/spcCase1"
+                index: "/myapp/spcCase1"
             }, {
                 name: "spc案例2",
-                index: "/spcCase2"
+                index: "/myapp/spcCase2"
             }]
         });
 }
